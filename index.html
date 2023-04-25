@@ -1,41 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="app.css" />
     <title>Post App</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Post App with Firebase REST API</h1>
-        <button id="btn-create-post">Create New Post</button>
+      <h1>Post App with Firebase REST API</h1>
+      <button id="btn-create-post">Create New Post</button>
     </header>
 
-
-
     <main>
-
-        <section>
-            <h2>Posts</h2>
-            <section id="posts" class="grid-container"></section>
-        </section>
+      <section>
+        <h2>Posts</h2>
+        <section id="posts" class="grid-container"></section>
+      </section>
     </main>
 
     <!-- dialog - create new post -->
+    <dialog id="create-new-post-dialog">
+      <div id="dialog-grid-container">
+        <h2>Create new post</h2>
+        <form id="form-create-post">
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            name="title"
+            id="create-title-input"
+            placeholder="Title"
+          />
+          <label for="body">Body:</label>
+          <input
+            type="text"
+            name="body"
+            id="create-body-input"
+            placeholder="Text"
+          />
+          <label for="image">Image:</label>
+          <input
+            type="url"
+            name="image"
+            id="create-image-input"
+            placeholder="Image URL"
+          />
+          <button id="btn-create-submit">Submit</button>
+        </form>
+      </div>
+    </dialog>
     <!-- to do  -->
 
     <!-- dialog - update post -->
+    <dialog id="dialog-update-post">
+      <h2>Update post</h2>
+      <form id="form-update-post">
+        <label for="title">Title:</label>
+        <input type="text" name="title" placeholder="New title" />
+        <label for="body">Body:</label>
+        <input type="text" name="body" placeholder="New body text" />
+        <img id="image-update" alt="" style="max-height: 400px; width: auto" />
+        <input
+          type="url"
+          name="image"
+          id="image-update"
+          placeholder="New image URL"
+        />
+        <button>UPDATE POST</button>
+      </form>
+    </dialog>
     <!-- to do  -->
 
-
     <!-- dialog - delete post -->
+    <dialog id="dialog-delete-post">
+      <h2>Do you want to delete post?</h2>
+      <p id="dialog-delete-post-title">Title of post.</p>
+      <form method="dialog" id="form-delete-post">
+        <button type="button" class="btn-cancel" id="btn-cancel">NO</button>
+        <button>YES</button>
+      </form>
+    </dialog>
     <!-- to do  -->
 
     <script src="app.js"></script>
-</body>
-
+  </body>
 </html>
